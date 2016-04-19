@@ -54,7 +54,32 @@
 	// require(__dirname + '/repos/repos.js');
 
 	(function() {
-	  angular.module('directives-app', []);
+	  angular.module('directives-app', [])
+	  .directive('customNav', function() {
+	    return {
+	      restrict: 'E',
+	      templateUrl: './templates/navbar.html'
+	    };
+	  })
+	  .directive('customFooter', function() {
+	    return {
+	      restrict: 'E',
+	      templateUrl: './templates/footer.html'
+	    };
+	  })
+	  .directive('customHeading', function() {
+	    return {
+	      restrict: 'A',
+	      templateUrl: './templates/heading.html'
+	    };
+	  })
+	  .directive('customList', function() {
+	    return {
+	      restrict: 'A',
+	      templateUrl: './templates/list.html'
+	    }
+	  })
+
 	})();
 
 
@@ -31314,7 +31339,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".nav {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n\n.footer {\n  list-style-type: none;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n\nh2 {\n  margin-left: 3%;\n}\n", ""]);
 
 	// exports
 
