@@ -79,6 +79,19 @@
 	      templateUrl: './templates/list.html'
 	    }
 	  })
+	  .directive('linkDirective', function() {
+	    return {
+	      restrict: 'A',
+	      replace: true,
+	      scope: {},
+	      link: function($scope, element, attrs) {
+	        element.on('click', function() {
+	          element.css('border', 'solid 1px blue');
+	          element.css('padding-left', '35%')
+	        })
+	      }
+	    }
+	  })
 
 	})();
 
@@ -31339,7 +31352,7 @@
 
 
 	// module
-	exports.push([module.id, ".nav {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n\n.footer {\n  list-style-type: none;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n\nh2 {\n  margin-left: 3%;\n}\n", ""]);
+	exports.push([module.id, ".nav {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  background-color: orange;\n  height: 56px;\n  font-weight: bold;\n}\n\na {\n  background-color: orange;\n}\n\na:hover {\n  font-weight: normal;\n}\n\n.footer {\n  list-style-type: none;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding-right: 2%;\n}\n\nh2 {\n  margin-left: 3%;\n}\n", ""]);
 
 	// exports
 
