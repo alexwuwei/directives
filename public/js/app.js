@@ -33,5 +33,18 @@ require(__dirname + '/../css/animate.css');
       templateUrl: './templates/list.html'
     }
   })
+  .directive('linkDirective', function() {
+    return {
+      restrict: 'A',
+      replace: true,
+      scope: {},
+      link: function($scope, element, attrs) {
+        element.on('click', function() {
+          element.css('border', 'solid 1px blue');
+          element.css('padding-left', '35%')
+        })
+      }
+    }
+  })
 
 })();
